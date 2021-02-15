@@ -9,6 +9,8 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Views/Home";
 import About from "./Views/About";
+import Product from "./Views/Product";
+
 
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
             </Route>
             <Route exact path="/about">
               <About />
+            </Route>
+            <Route exact path="/products/:id">
+              <Product />
             </Route>
           </Switch>
         </div>
