@@ -67,6 +67,7 @@ function Product(){
             </div>
         </div>
     }
+    
     return(
         <div>
             {content}
