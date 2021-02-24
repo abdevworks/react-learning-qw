@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Header />
 
-        <div className="p-3">
+        <div className="bg-gray-200 pb-3">
           <Switch>
             <Route exact path="/">
               <Home />
