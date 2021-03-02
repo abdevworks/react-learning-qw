@@ -1,46 +1,16 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import Loader from "../Components/Loader";
 import ProductCard from "../Components/ProductCard";
 import { useAxiosGet } from "../Hooks/HttpRequests";
 import BannerAd from "../Components/BannerAd";
 import HotDeal from "../Components/HotDeal";
+import ProductList from "../Components/ProductList";
 
 
 function Home(){
 
     const url = `https://602a44aa6c995100176ee169.mockapi.io/products?page=1&limit=10`;
-
-    let products = useAxiosGet(url);
-    let content = null;
-
-    
-
-    if(products.error){
-        content = 
-        <p>
-            There was an error please refresh or try again later
-        </p>
-    }
-
-    if(products.loading){
-        content = <Loader />
-    }
-
-    if(products.data){
-        console.log(products.data);
-        content =
-        <div className="flex flex-wrap">
-            {
-            products.data.map((product) => 
-            <div key={product.id}>
-                <ProductCard
-                    product={product}
-                 />
-            </div>
-            )}
-        </div>
-    }
+    let content = <ProductList url={url} />;
 
 
     return(
@@ -50,7 +20,7 @@ function Home(){
                 <HotDeal />
             </div>
 
-            <div className="my-3 bg-white">
+            <div className="my-3 bg-white p-4">
                 <h1 className="font-bold text-2xl">
                     Best Sellers
                 </h1>

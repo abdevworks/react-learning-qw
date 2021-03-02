@@ -29,9 +29,9 @@ function ProductCard(props){
                         $ {props.product.price}
                     </div>
 
-                    <div className="mb-3">
+                    {/* <div className="mb-3">
                         {props.product.description}
-                    </div>
+                    </div> */}
 
                     <Link 
                     to={`/products/${props.product.id}`} 
