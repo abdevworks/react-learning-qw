@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Loader from "../Components/Loader";
-import ProductCard from "../Components/ProductCard";
-import { useAxiosGet } from "../Hooks/HttpRequests";
 import BannerAd from "../Components/BannerAd";
 import HotDeal from "../Components/HotDeal";
 import ProductList from "../Components/ProductList";
+import HorizotalScrollingMenu from "../Components/HorizontalScrollingMenu";
 
 
 function Home(){
@@ -25,6 +23,10 @@ function Home(){
                     Best Sellers
                 </h1>
                 {content}
+            </div>
+
+            <div className="my-3 bg-white p-4">
+                <HorizotalScrollingMenu />
             </div>
         </>
     );
