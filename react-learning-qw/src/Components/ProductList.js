@@ -2,6 +2,7 @@ import React from "react";
 import Loader from "../Components/Loader";
 import ProductCard from "../Components/ProductCard";
 import { useAxiosGet } from "../Hooks/HttpRequests";
+import HorizontalScrollingMenu from "./HorizontalScrollingMenu";
 
 
 export default function ProductList(props){
@@ -24,7 +25,8 @@ export default function ProductList(props){
     if(products.data){
         console.log(products.data);
         content =
-        <div className="flex">
+        <HorizontalScrollingMenu productsList={products.data} />
+        {/* <div className="flex">
             {
             products.data.map((product) => 
             <div 
@@ -36,7 +38,7 @@ export default function ProductList(props){
                  />
             </div>
             )}
-        </div>
+        </div> */}
     }
 
     return(

@@ -25,9 +25,9 @@ function Home(){
                 {content}
             </div>
 
-            <div className="my-3 bg-white p-4">
+            {/* <div className="my-3 bg-white p-4">
                 <HorizotalScrollingMenu />
-            </div>
+            </div> */}
         </>
     );
 }

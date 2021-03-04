@@ -1,35 +1,21 @@
 import React, {Component} from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
+import ProductCard from "../Components/ProductCard";
 
 
-// list of iitems 
-const list = [
-    { name: 'item1' },
-    { name: 'item2' },
-    { name: 'item3' },
-    { name: 'item4' },
-    { name: 'item5' },
-    { name: 'item6' },
-    { name: 'item7' },
-    { name: 'item8' },
-    { name: 'item9' }
-];
+
 
 // One item component
 // selected prop will be passed
 const MenuItem = ({text, selected}) => {
-    return <div
-      className={`px-4 my-3 mx-6 cursor-pointer border-none ${selected ? 'active' : ''}`}
-      >{text}</div>;
+    return <ProductCard product={text} />;
   };
 
 // All items component
 // Important! add unique key
-export const Menu = (list, selected) =>
-  list.map(el => {
-    const {name} = el;
-
-    return <MenuItem text={name} key={name} selected={selected} />;
+export const Menu = (productsList, selected) =>
+  productsList.map(productItem => {
+    return <MenuItem text={productItem} key={productItem.id} selected={selected} />;
   });
 
 
@@ -47,13 +33,12 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 
 const selected = 'item1';
 
+
 export default class HorizotalScrollingMenu extends Component {
     constructor(props) {
       super(props);
-      // call it again if items count changes
-      this.menuItems = Menu(list, selected);
     }
-  
+
     state = {
       selected
     };
@@ -66,8 +51,12 @@ export default class HorizotalScrollingMenu extends Component {
     render() {
       const { selected } = this.state;
       // Create menu from items
+
+      if(this.props.productsList){
+        this.menuItems = Menu(this.props.productsList, selected);
+      }
       const menu = this.menuItems;
-  
+
       return (
         <div className="App">
           <ScrollMenu
