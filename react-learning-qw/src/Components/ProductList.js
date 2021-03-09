@@ -26,19 +26,6 @@ export default function ProductList(props){
         console.log(products.data);
         content =
         <HorizontalScrollingMenu productsList={products.data} />
-        {/* <div className="flex">
-            {
-            products.data.map((product) => 
-            <div 
-            key={product.id}
-            className="min-w-max"
-            >
-                <ProductCard
-                    product={product}
-                 />
-            </div>
-            )}
-        </div> */}
     }
 
     return(
