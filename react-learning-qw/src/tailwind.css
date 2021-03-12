@@ -29164,14 +29164,6 @@ video {
   animation: spin 2s linear infinite;
 }
 
-.menu-item.active {
-  border: 1px green solid;
-}
-
-.menu-item-wrapper.active {
-  border: none;
-}
-
 /* Safari */
 
 @keyframes spin {
