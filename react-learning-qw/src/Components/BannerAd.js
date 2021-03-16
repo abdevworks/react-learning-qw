@@ -12,27 +12,41 @@ const slides = [
 export default function BannerAd(){
 
     const [index, set] = useState(0);
-    const transitions = useTransition(slides[index], item => item.id, {
-        from: {opacity: 0, transform: 'translateX(100%)' },
-        enter: { opacity: 1, transform: 'translateX(0%)' },
-        leave: { opacity: 0, transform: 'translateX(-100%)' },
+    const  [direction, setDirection] = useState(1);
+    const transitionsLeft = useTransition(slides[index], item => item.id, {
+        from: {opacity: 0, transform: `translateX(100%)` },
+        enter: { opacity: 1, transform: `translateX(0%)` },
+        leave: { opacity: 0, transform: `translateX(-100%)` },
     });
 
+    const transitionsRight = useTransition(slides[index], item => item.id, {
+        from: {opacity: 0, transform: `translateX(-100%)` },
+        enter: { opacity: 1, transform: `translateX(0%)` },
+        leave: { opacity: 0, transform: `translateX(100%)` },
+    });
+    
+
     useEffect(() =>{
-        const intervalId = setInterval(() => set(state => (state + 1) % 4), 5000);
+        const intervalId = setInterval(() => {
+            setDirection(1);
+            set(state => (state + 1) % slides.length);
+        }, 5000);
         return ()=>{
             //cleanup function
             clearInterval(intervalId);
         }
-    });
+    },[]);
+
 
     function handleRightClick(){
-        set(state => (state + 1) % 4);
+        setDirection(1);
+        set(state => (state + 1) % slides.length);
     }
 
     function handleLeftClick(){
+        setDirection(-1);
         if(index > 1){
-            set(state => (state - 1) % 4); //fix indexes
+            set(state => (state - 1) % slides.length); 
         }else{
             set(slides.length-1);
         }
@@ -44,21 +58,29 @@ export default function BannerAd(){
             
             <div 
                 className="absolute z-10 left-0 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center font-bold bg-white shadow-md cursor-pointer  select-none" 
-                onClick={handleRightClick}>
+                onClick={handleLeftClick}>
                 {"<"}
             </div>
 
             <div className="h-44 relative">
-                {transitions.map(({ item, props, key }) => (
+                {
+                direction === 1 && transitionsLeft.map(({ item, props, key }) => (
                         <animated.div
                             key={key}
                             className="h-44 w-screen bg-cover bg-center absolute"
                             style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url})`}}
                         />
                 ))}
+                {
+                direction === -1 && transitionsRight.map(({ item, props, key }) => (
+                    <animated.div
+                        key={key}
+                        className="h-44 w-screen bg-cover bg-center absolute"
+                        style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url})`}}
+                    />
+                ))
+                }
             </div>
-
-
 
             <div 
                 className="absolute z-10 right-0 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center  font-bold bg-white shadow-md cursor-pointer select-none" 
