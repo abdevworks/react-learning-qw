@@ -29164,6 +29164,11 @@ video {
   animation: spin 2s linear infinite;
 }
 
+.animation {
+  touch-action: none;
+  background: hotpink;
+}
+
 /* Safari */
 
 @keyframes spin {

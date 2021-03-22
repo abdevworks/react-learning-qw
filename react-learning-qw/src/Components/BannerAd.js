@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {useTransition, animated, config} from 'react-spring';
+import React, {useState, useEffect, useRef} from "react";
+import {useTransition, animated} from 'react-spring';
+
 
 
 const slides = [
@@ -11,20 +12,13 @@ const slides = [
 
 export default function BannerAd(){
 
-    const [index, set] = useState(0);
-    const  [direction, setDirection] = useState(1);
-    const transitionsLeft = useTransition(slides[index], item => item.id, {
-        from: {opacity: 0, transform: `translateX(100%)` },
+    const [index, set] = useState(0); //slide index
+    const  [direction, setDirection] = useState(1); //animation direction
+    const transitions = useTransition(slides[index], item => item.id, {
+        from: {opacity: 0, transform: `translateX(${100 * direction}%)` },
         enter: { opacity: 1, transform: `translateX(0%)` },
-        leave: { opacity: 0, transform: `translateX(-100%)` },
+        leave: { opacity: 0, transform: `translateX(${-100 * direction}%)` },
     });
-
-    const transitionsRight = useTransition(slides[index], item => item.id, {
-        from: {opacity: 0, transform: `translateX(-100%)` },
-        enter: { opacity: 1, transform: `translateX(0%)` },
-        leave: { opacity: 0, transform: `translateX(100%)` },
-    });
-    
 
     useEffect(() =>{
         const intervalId = setInterval(() => {
@@ -54,7 +48,7 @@ export default function BannerAd(){
     }
 
     return(
-        <div className="flex items-center rounded-xl overflow-hidden">
+        <div className="flex items-center rounded-xl overflow-hidden shadow-lg">
             
             <div 
                 className="absolute z-10 left-0 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center font-bold bg-white shadow-md cursor-pointer  select-none" 
@@ -62,24 +56,15 @@ export default function BannerAd(){
                 {"<"}
             </div>
 
-            <div className="h-44 relative">
+            <div className="h-40 relative">
                 {
-                direction === 1 && transitionsLeft.map(({ item, props, key }) => (
-                        <animated.div
-                            key={key}
-                            className="h-44 w-screen bg-cover bg-center absolute"
-                            style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url})`}}
-                        />
-                ))}
-                {
-                direction === -1 && transitionsRight.map(({ item, props, key }) => (
+                transitions.map(({ item, props, key }) => (
                     <animated.div
                         key={key}
                         className="h-44 w-screen bg-cover bg-center absolute"
                         style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url})`}}
                     />
-                ))
-                }
+                ))}
             </div>
 
             <div 
