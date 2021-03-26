@@ -14,7 +14,7 @@ export default function StockUpadeBar(){
                 <span className="text-xl font-bold">23</span>
             </div> 
         </div>
-        <ProgressBar />
+        <ProgressBar percent={0.65}/>
         </>
     );
 }
