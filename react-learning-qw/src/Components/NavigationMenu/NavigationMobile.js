@@ -22,7 +22,7 @@ export default function NavigationMobile(){
 
 
     return(
-        <nav >
+        <nav className="pl-2">
             <span className="text-2xl md:hidden">
                 <FontAwesomeIcon 
                     icon={faBars}
