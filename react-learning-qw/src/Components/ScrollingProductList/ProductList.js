@@ -1,7 +1,6 @@
 import React from "react";
-import Loader from "../Components/Loader";
-import ProductCard from "../Components/ProductCard";
-import { useAxiosGet } from "../Hooks/HttpRequests";
+import Loader from "./Loader";
+import { useAxiosGet } from "../../Hooks/HttpRequests";
 import HorizontalScrollingMenu from "./HorizontalScrollingMenu";
 
 

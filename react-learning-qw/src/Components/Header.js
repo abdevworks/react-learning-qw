@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "./Navigation";
-import NavigationMobile from "./NavigationMobile";
+import Navigation from "./NavigationMenu/Navigation";
+import NavigationMobile from "./NavigationMenu/NavigationMobile";
 
 export default function Header(){
     return(

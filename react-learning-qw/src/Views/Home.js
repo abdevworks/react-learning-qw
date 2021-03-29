@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import BannerAd from "../Components/BannerAd";
-import HotDeal from "../Components/HotDeal";
-import ProductList from "../Components/ProductList";
+import BannerAd from "../Components/BannerAd/BannerAd";
+import HotDeal from "../Components/HotDeal/HotDeal";
+import ProductList from "../Components/ScrollingProductList/ProductList";
 
 
 

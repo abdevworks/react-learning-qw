@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import StockUpadeBar from "./StockUpdateBar";
 import CountdownTimer from "./CountdownTimer";
-import DiscountedProduct from "../Views/DiscountedProduct";
+import DiscountedProduct from "../../Views/DiscountedProduct";
 
 
 export default function HotDeal(){

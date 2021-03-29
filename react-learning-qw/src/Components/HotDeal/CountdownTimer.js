@@ -20,7 +20,6 @@ export default function CountdownTimer(){
             seconds: Math.floor((difference / 1000) % 60)
         };
 
-      console.log(timeLeft);
       return timeLeft;
     
     }
@@ -39,7 +38,6 @@ export default function CountdownTimer(){
 
     /*Format displayed time*/
     Object.keys(timeLeft).forEach((interval) => {
-        console.log("checking time")
         if(!timeLeft[interval]){
             timerComponents.push("00");
         }if(timeLeft[interval] < 10){
