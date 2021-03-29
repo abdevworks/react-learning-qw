@@ -2,23 +2,25 @@ import React, {useState, useEffect} from 'react';
 
 export default function CountdownTimer(){
 
-    const dealTime = "03/28/2021 16:22:16"
+    const dealTime = "04/28/2021 16:22:16"
     
 
     const calculateTimeLeft = () => {
-        let year = new Date().getFullYear();
-        let difference = +new Date(dealTime) - +new Date();
+        let difference = +new Date(dealTime) - +new Date();      
         let timeLeft = {};
-    
-        if (difference > 0) {
-          timeLeft = {
+        
+        if(difference < 0){//if time ended set the timer to 0
+            difference = 0;
+        }
+
+        timeLeft = {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
             hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
             minutes: Math.floor((difference / 1000 / 60) % 60),
             seconds: Math.floor((difference / 1000) % 60)
         };
-      }
-    
+
+      console.log(timeLeft);
       return timeLeft;
     
     }
@@ -37,6 +39,7 @@ export default function CountdownTimer(){
 
     /*Format displayed time*/
     Object.keys(timeLeft).forEach((interval) => {
+        console.log("checking time")
         if(!timeLeft[interval]){
             timerComponents.push("00");
         }if(timeLeft[interval] < 10){
