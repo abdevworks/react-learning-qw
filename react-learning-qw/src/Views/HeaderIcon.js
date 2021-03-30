@@ -1,12 +1,18 @@
-import Rect from 'react';
+import Rect, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPhone, faShoppingBasket, faUser} from "@fortawesome/free-solid-svg-icons";
+
+
 
 export default function HeaderIcon(props){
+
+
     return(
-        <div className="px-2 flex flex-col items-center">
-            <FontAwesomeIcon icon={props.iconType}/>
-            <div className="text-sm">{props.iconText}</div>
+        <div className="px-2 flex flex-col items-center justify-center h-10 cursor-pointer"  >
+            <div className="h-7 text-lg">
+                <FontAwesomeIcon icon={props.iconType}/>
+            </div>
+            
+            <div className="text-xs">{props.iconText}</div>
         </div>
     );
 }

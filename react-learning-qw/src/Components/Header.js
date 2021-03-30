@@ -10,7 +10,7 @@ export default function Header(){
         <header className="border-b px-4 flex justify-between items-center md:flex-col md:items-start">
             <img className="w-16 h-16" src={CompanyLogo} />
 
-            <div className="flex items-center h-full">
+            <div className="flex items-center h-10">
                 <HeaderIcon iconType={faUser} iconText="Account"/>
                 <HeaderIcon iconType={faShoppingBasket} iconText="Basket"/>
                 <HeaderIcon iconType={faPhone} iconText="Contact"/>

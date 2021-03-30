@@ -22,13 +22,14 @@ export default function NavigationMobile(){
 
 
     return(
-        <nav className="pl-2">
-            <span className="text-2xl md:hidden">
+        <nav className="pl-4 flex flex-col items-center justify-center h-10 border-l cursor-pointer">
+            <span className="text-xl md:hidden">
                 <FontAwesomeIcon 
                     icon={faBars}
                     onClick={()=>setShowMenu(!showMenu)}
                 />
             </span>
+            <div className="text-xs">Menu</div>
             {
                 maskTransitions.map(({ item, key, props }) =>
                     item && 
