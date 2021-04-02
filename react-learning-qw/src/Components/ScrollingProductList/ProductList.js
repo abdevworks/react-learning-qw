@@ -22,7 +22,6 @@ export default function ProductList(props){
     }
 
     if(products.data){
-        console.log(products.data);
         content =
         <HorizontalScrollingMenu productsList={products.data} />
     }
