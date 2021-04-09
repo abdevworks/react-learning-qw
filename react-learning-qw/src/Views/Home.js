@@ -1,12 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
 import ProductList from "../Components/ScrollingProductList/ProductList";
-import HorizontalScrollingContainer from '../Components/ScrollingProductList/HorizontalScrollingContainer';
 import Pull from '../Components/Pull';
-
-
-
 
 
 function Home(){
@@ -26,8 +22,6 @@ function Home(){
                 <h1 className="font-bold text-2xl">
                     Best Sellers
                 </h1>
-                {/* <HorizontalScrollingContainer /> */}
-                {/* {content} */}
                 <Pull />
             </div>
         </>

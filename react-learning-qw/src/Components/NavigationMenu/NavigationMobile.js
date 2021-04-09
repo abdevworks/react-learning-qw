@@ -8,13 +8,13 @@ export default function NavigationMobile(){
 
     const [showMenu, setShowMenu] = useState(false);
 
-    const maskTransitions = useTransition(showMenu, null, {
+    const maskTransitions = useTransition(showMenu, {
         from: { position: 'absolute', opacity: 0 },
         enter: { opacity: 1 },
         leave: { opacity: 0 },
     })
 
-    const menuTransitions = useTransition(showMenu, null, {
+    const menuTransitions = useTransition(showMenu, {
         from: {opacity: 0, transform: 'translateX(-100%)' },
         enter: { opacity: 1, transform: 'translateX(0%)' },
         leave: { opacity: 0, transform: 'translateX(-100%)' },
@@ -31,7 +31,7 @@ export default function NavigationMobile(){
             </span>
             <div className="text-xs">Menu</div>
             {
-                maskTransitions.map(({ item, key, props }) =>
+                maskTransitions(( props, item, key  ) =>
                     item && 
                     <animated.div 
                         key={key} 
@@ -45,7 +45,7 @@ export default function NavigationMobile(){
             }
 
             {
-                menuTransitions.map(({ item, key, props }) =>
+                menuTransitions(( props, item, key  ) =>
                     item && 
                     <animated.div 
                         key={key} 

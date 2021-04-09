@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useRef} from "react";
-import {useTransition, animated} from 'react-spring';
-
+import React, {useState, useEffect} from "react";
+import {useTransition, animated} from 'react-spring'
 
 
 const slides = [
@@ -10,11 +9,13 @@ const slides = [
     { id: 3, url: 'photo-1544244015-0df4b3ffc6b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1303&q=80' },
 ];
 
+
+
 export default function BannerAd(){
 
     const [index, set] = useState(0); //slide index
     const  [direction, setDirection] = useState(1); //animation direction
-    const transitions = useTransition(slides[index], item => item.id, {
+    const transitions = useTransition(slides[index],  {
         from: {opacity: 0, transform: `translateX(${100 * direction}%)` },
         enter: { opacity: 1, transform: `translateX(0%)` },
         leave: { opacity: 0, transform: `translateX(${-100 * direction}%)` },
@@ -58,7 +59,7 @@ export default function BannerAd(){
 
             <div className="h-40 relative">
                 {
-                transitions.map(({ item, props, key }) => (
+                transitions(( props,item, key ) => (
                     <animated.div
                         key={key}
                         className="h-44 w-screen bg-cover bg-center absolute"

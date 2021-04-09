@@ -15,24 +15,18 @@ const cards = [
 ];
 
 export default function Pull() {
-  const [{ x }, set] = useSpring(() => ({ x: 0 }));
-  const bind = useDrag(({ down, movement }) => {
-    set({ x: down ? movement : movement })
+  const [{ x }, set] = useSpring(() => ({ x: 0 }))
+  const bind = useDrag(({ down, offset: [ox] }) => set({ x: ox, immediate: down }), {
+    bounds: { left: -830, right: 0},
+    rubberband: true,
   })
 
   return (
     <div className=" h-60 bg-red-200 w-full flex overflow-hidden">
-      <animated.div
-      {...bind()}
-      style={{
-        transform: x.interpolate((x) => `translate3d(${x}px, 0, 0)`),
-      }}
-      className=" h-60 w-full flex"
-      >
+      <animated.div className=" h-60 w-full flex" {...bind()} style={{ x }}>
         {cards.map(card => {
           return <img src={card} className="p-1" draggable="false"/>
         })}
-
       </animated.div>
     </div>
 
