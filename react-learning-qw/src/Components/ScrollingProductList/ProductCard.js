@@ -19,7 +19,7 @@ function ProductCard(props){
                 className="md:w-2/5"
                 >
                     <div className="md:flex-shrink-0">
-                        <img className="h-64 w-full object-cover md:w-md" src={props.product.images[0].image} draggable="false"/>
+                        <img alt='product item' className="h-64 w-full object-cover md:w-md"  src={props.product.images[0].image} draggable="false"  />
                     </div>
                 </Link>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { useSpring, animated } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
 
@@ -16,16 +16,36 @@ const cards = [
 
 export default function Pull() {
   const [{ x }, set] = useSpring(() => ({ x: 0 }))
-  const bind = useDrag(({ down, offset: [ox] }) => set({ x: ox, immediate: down }), {
-    bounds: { left: -830, right: 0},
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  function calculateDragBounds(){
+    let dragBound = cards.length * 44 * 0.25 * 16 + 6*2*0.25*16- windowWidth;
+    return dragBound;
+  }
+
+  window.addEventListener("resize", function() {
+    setWindowWidth(window.innerWidth);
+  });
+
+
+  const bind = useDrag(({ down, offset: [ox], tap }) => {
+    if (tap) alert('tap!')
+    set({ x: ox, immediate: down })
+  },
+  {
+    bounds: { left: -(calculateDragBounds()), right: 0},
     rubberband: true,
-  })
+    filterTaps: true
+  });
+
+  function handleProductSelection(){
+    alert("Product was selected!");
+  }
 
   return (
-    <div className=" h-60 bg-red-200 w-full flex overflow-hidden">
-      <animated.div className=" h-60 w-full flex" {...bind()} style={{ x }}>
-        {cards.map(card => {
-          return <img src={card} className="p-1" draggable="false"/>
+    <div className="h-60  w-full overflow-hidden" >
+      <animated.div className=" h-60 flex" {...bind()} style={{ x }}>
+        {cards.map((card, key) => {
+          return <img key={key }src={card} className="px-1 w-44" draggable="false" alt="product" onClick={handleProductSelection}/>
         })}
       </animated.div>
     </div>

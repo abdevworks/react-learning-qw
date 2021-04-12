@@ -11,7 +11,8 @@ export default function DiscountedProduct(){
             <div className="flex justify-center h-64 w-64  mx-auto overflow-hidden pt-10">
                 <img 
                 src={slides[0].url}
-                className="object-co h-full rounded-xl"/>
+                className="object-co h-full rounded-xl"
+                alt="discounted product"/>
             </div>
 
             <span className="text-center text-lg block mt-1">Item Description</span>

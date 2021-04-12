@@ -1,14 +1,14 @@
 import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
-import ProductList from "../Components/ScrollingProductList/ProductList";
+//import ProductList from "../Components/ScrollingProductList/ProductList";
 import Pull from '../Components/Pull';
 
 
 function Home(){
 
-    const url = `https://602a44aa6c995100176ee169.mockapi.io/products?page=1&limit=10`;
-    let content = <ProductList url={url} />;
+    //const url = `https://602a44aa6c995100176ee169.mockapi.io/products?page=1&limit=10`;
+    //let content = <ProductList url={url} />;
 
 
     return(
