@@ -57,12 +57,12 @@ export default function BannerAd(){
                 {"<"}
             </div>
 
-            <div className="h-40 relative">
+            <div className="h-48 relative">
                 {
                 transitions(( props,item, key ) => (
                     <animated.div
                         key={key}
-                        className="h-44 w-screen bg-cover bg-center absolute"
+                        className="h-48 w-screen bg-cover bg-center absolute"
                         style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url})`}}
                     />
                 ))}

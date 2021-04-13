@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import { useSpring, animated } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
+import ProductCard from './ScrollingProductList/ProductCard'
 
 const cards = [
   'https://images.pexels.com/photos/4646228/pexels-photo-4646228.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
@@ -14,9 +15,13 @@ const cards = [
   'https://images.pexels.com/photos/5651679/pexels-photo-5651679.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
 ];
 
-export default function Pull() {
+export default function ScrollableList(props) {
   const [{ x }, set] = useSpring(() => ({ x: 0 }))
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const {productData} = props;
+  console.log(productData)
+
+
   function calculateDragBounds(){
     let dragBound = cards.length * 44 * 0.25 * 16 + 6*2*0.25*16- windowWidth;
     return dragBound;
@@ -37,15 +42,15 @@ export default function Pull() {
     filterTaps: true
   });
 
-  function handleProductSelection(){
-    alert("Product was selected!");
-  }
+  // function handleProductSelection(){
+  //   alert("Product was selected!");
+  // }
 
   return (
     <div className="h-60  w-full overflow-hidden" >
       <animated.div className=" h-60 flex" {...bind()} style={{ x }}>
-        {cards.map((card, key) => {
-          return <img key={key }src={card} className="px-1 w-44" draggable="false" alt="product" onClick={handleProductSelection}/>
+        {productData.map((product,key)=>{
+          return <div className="w-44 px-1"><ProductCard key={key} product={product} /></div>
         })}
       </animated.div>
     </div>

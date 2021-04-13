@@ -1,19 +1,18 @@
 import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
-//import ProductList from "../Components/ScrollingProductList/ProductList";
-import Pull from '../Components/Pull';
+import ProductList from "../Components/ScrollingProductList/ProductList";
 
 
 function Home(){
 
-    //const url = `https://602a44aa6c995100176ee169.mockapi.io/products?page=1&limit=10`;
-    //let content = <ProductList url={url} />;
+    const url = `https://602a44aa6c995100176ee169.mockapi.io/products?page=1&limit=10`;
+    let bestSellerList = <ProductList url={url} />;
 
 
     return(
         <>
-            <div className="bg-white p-4">
+            <div className="bg-white p-4 shadow-inner">
                 <BannerAd />
                 <HotDeal />
             </div>
@@ -22,7 +21,7 @@ function Home(){
                 <h1 className="font-bold text-2xl">
                     Best Sellers
                 </h1>
-                <Pull />
+                {bestSellerList}
             </div>
         </>
     );

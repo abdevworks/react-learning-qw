@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "./Loader";
 import { useAxiosGet } from "../../Hooks/HttpRequests";
-import HorizontalScrollingMenu from "./HorizontalScrollingMenu";
+import ScrollableList from "../ScrollableList";
 
 
 export default function ProductList(props){
@@ -22,8 +22,7 @@ export default function ProductList(props){
     }
 
     if(products.data){
-        content =
-        <HorizontalScrollingMenu productsList={products.data} />
+        content = <ScrollableList productData={products.data} />
     }
 
     return(

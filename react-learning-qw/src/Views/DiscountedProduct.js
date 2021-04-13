@@ -8,10 +8,10 @@ export default function DiscountedProduct(){
 
     return(
         <>
-            <div className="flex justify-center h-64 w-64  mx-auto overflow-hidden pt-10">
+            <div className="flex justify-center h-64 w-64  mx-auto overflow-hidden pt-4">
                 <img 
                 src={slides[0].url}
-                className="object-co h-full rounded-xl"
+                className="object-co h-full rounded-xl opacity-80"
                 alt="discounted product"/>
             </div>
 

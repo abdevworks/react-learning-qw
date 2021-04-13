@@ -11,7 +11,7 @@ function ProductCard(props){
     }
 
     return(
-        <div className={`max-w-md mx-0.5 my-3 w-72 bg-white rounded-xl ${isHovered ? "shadow-md" : ""} overflow-hidden md:max-w-2xl`} onMouseOver={handleHover} onMouseOut={handleHover}>
+        <div className={`w-40 h-60 bg-white ${isHovered ? "shadow-md" : ""} overflow-hidden select-none cursor-pointer`} onMouseOver={handleHover} onMouseOut={handleHover}>
             <div className="md:flex">
 
                 <Link 
@@ -19,31 +19,22 @@ function ProductCard(props){
                 className="md:w-2/5"
                 >
                     <div className="md:flex-shrink-0">
-                        <img alt='product item' className="h-64 w-full object-cover md:w-md"  src={props.product.images[0].image} draggable="false"  />
+                        <img alt='product item' className="w-full object-cover"  src={props.product.images[0].image} draggable="false"  />
                     </div>
                 </Link>
 
-                <div className="p-3 w-full md:w-3/5 md:flex md:flex-col md:justify-between ">
+                <div className="p-3 w-full">
 
-                    <h3 className="font-bold text-xl mb-3">
+                    <span className="text-sm mb-3">
                         <Link to={`/products/${props.product.id}`} draggable="false" >
                             {props.product.name}
                         </Link>
-                    </h3>
+                    </span>
 
                     <div className="font-bold mb-3" draggable="false">
                         $ {props.product.price}
                     </div>
 
-                    {/* <div className="mb-3">
-                        {props.product.description}
-                    </div> */}
-
-                    <Link 
-                    to={`/products/${props.product.id}`} 
-                    className="bg-blue-500 text-white p-2 flex justify-center w-full" draggable="false" >
-                        View
-                    </Link> 
 
                 </div>
             </div>
