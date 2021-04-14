@@ -17,8 +17,8 @@ function Home(){
                 <HotDeal />
             </div>
 
-            <div className="my-3 bg-white p-4">
-                <h1 className="font-bold text-2xl">
+            <div className="my-3 bg-white px-4 pt-4 pb-8">
+                <h1 className="font-bold text-2xl pb-3">
                     Best Sellers
                 </h1>
                 {bestSellerList}
