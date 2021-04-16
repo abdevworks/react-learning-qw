@@ -22,8 +22,8 @@ export default function NavigationMobile(){
 
 
     return(
-        <nav className="pl-4 flex flex-col items-center justify-center h-10 border-l cursor-pointer">
-            <span className="text-xl md:hidden">
+        <nav className="pl-4 flex flex-col items-center justify-center h-10 border-l cursor-pointer  lg:hidden">
+            <span className="text-xl">
                 <FontAwesomeIcon 
                     icon={faBars}
                     onClick={()=>setShowMenu(!showMenu)}

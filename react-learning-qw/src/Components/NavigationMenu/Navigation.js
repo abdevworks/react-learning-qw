@@ -3,7 +3,7 @@ import NavigationMenu from "./NavigationMenu";
 
 export default function Navigation(props){
     return(
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
             <NavigationMenu />
         </div>
     )

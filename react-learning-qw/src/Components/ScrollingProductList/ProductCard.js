@@ -13,14 +13,14 @@ function ProductCard(props){
     return(
         <div className={`h-48 w-40 ${isHovered ? "shadow-md" : ""} overflow-hidden select-none cursor-pointer`} onMouseOver={handleHover} onMouseOut={handleHover}>
             <div className="flex flex-col h-full ">
-                <Link 
-                to={`/products/${props.product.id}`}
+                <div 
+                //to={`/products/${props.product.id}`}
                 className="h-3/5"
                 >
                     <div className="px-2">
                         <img alt='product item' className="w-full object-cover"  src={props.product.images[0].image} draggable="false"  />
                     </div>
-                </Link>
+                </div>
 
                 <div className="h-2/5 px-2 w-full flex flex-col justify-between">
 

@@ -7,16 +7,22 @@ import HeaderIcon from '../Views/HeaderIcon';
 
 export default function Header(){
     return(
-        <header className="border-b px-4 flex justify-between items-center md:flex-col md:items-start">
-            <img className="w-16 h-16" alt="appLogo" src={CompanyLogo} />
+        <header className="border-b md:flex-col md:items-start">
 
-            <div className="flex items-center h-10">
-                <HeaderIcon iconType={faUser} iconText="Account"/>
-                <HeaderIcon iconType={faShoppingBasket} iconText="Basket"/>
-                <HeaderIcon iconType={faPhone} iconText="Contact"/>
-                <NavigationMobile />
-                <Navigation />
+            <div className="flex px-4 justify-between items-center ">
+                <img className="w-16 h-16" alt="appLogo" src={CompanyLogo} />
+                <div className="flex items-center h-10">
+                    <HeaderIcon iconType={faUser} iconText="Account"/>
+                    <HeaderIcon iconType={faShoppingBasket} iconText="Basket"/>
+                    <HeaderIcon iconType={faPhone} iconText="Contact"/>
+                    <NavigationMobile/>
+                </div>
             </div>
+
+            <Navigation />
+            
+
+
 
         </header>
     );
