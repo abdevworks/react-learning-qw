@@ -52,7 +52,7 @@ export default function BannerAd(){
         <div className="flex items-center rounded-xl overflow-hidden shadow-lg">
             
             <div 
-                className="absolute z-10 left-0 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center font-bold bg-white shadow-md cursor-pointer  select-none" 
+                className="absolute z-10 left-0 lg:left-5 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center font-bold bg-white shadow-md cursor-pointer  select-none" 
                 onClick={handleLeftClick}>
                 {"<"}
             </div>
@@ -69,7 +69,7 @@ export default function BannerAd(){
             </div>
 
             <div 
-                className="absolute z-10 right-0 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center  font-bold bg-white shadow-md cursor-pointer select-none" 
+                className="absolute z-10 right-0 lg:right-5 border-1 border-black rounded-full h-10 w-10 flex items-center justify-center  font-bold bg-white shadow-md cursor-pointer select-none" 
                 onClick={handleRightClick}>
                 {">"}
             </div>

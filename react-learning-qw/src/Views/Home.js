@@ -12,12 +12,12 @@ function Home(){
 
     return(
         <>
-            <div className="bg-white p-4 shadow-inner">
+            <div className="bg-white p-4 lg:px-10 shadow-inner">
                 <BannerAd />
                 <HotDeal />
             </div>
 
-            <div className="my-3 bg-white px-4 pt-4 pb-8">
+            <div className="my-3 bg-white px-4 lg:px-10 pt-4 pb-8">
                 <h1 className="font-bold text-2xl pb-3">
                     Best Sellers
                 </h1>

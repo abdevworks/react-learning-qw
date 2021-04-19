@@ -9,7 +9,7 @@ export default function Header(){
     return(
         <header className="border-b md:flex-col md:items-start">
 
-            <div className="flex px-4 justify-between items-center ">
+            <div className="flex px-4 lg:px-10 justify-between items-center ">
                 <img className="w-16 h-16" alt="appLogo" src={CompanyLogo} />
                 <div className="flex items-center h-10">
                     <HeaderIcon iconType={faUser} iconText="Account"/>
