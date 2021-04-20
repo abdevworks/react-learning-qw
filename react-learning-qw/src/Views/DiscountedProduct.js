@@ -7,7 +7,7 @@ export default function DiscountedProduct(){
     ];
 
     return(
-        <>
+        <div className="flex flex-col">
             <div className="flex justify-center h-64 w-64  mx-auto overflow-hidden pt-4">
                 <img 
                 src={slides[0].url}
@@ -16,10 +16,7 @@ export default function DiscountedProduct(){
             </div>
 
             <span className="text-center text-lg block mt-1">Item Description</span>
-            <div className="mt-3">
-                <span className="block text-gray-500 text-center text-lg line-through">260,00 $</span>
-                <span className="block text-center text-pink-500 text-3xl font-bold">130,00 $</span>
-            </div>
-        </>
+
+        </div>
     );
 }

@@ -12,16 +12,18 @@ function Home(){
 
     return(
         <>
-            <div className="bg-white p-4 lg:px-10 shadow-inner">
+            <div className="p-4 lg:px-10 shadow-inner">
                 <BannerAd />
-                <HotDeal />
-            </div>
-
-            <div className="my-3 bg-white px-4 lg:px-10 pt-4 pb-8">
-                <h1 className="font-bold text-2xl pb-3">
-                    Best Sellers
-                </h1>
-                {bestSellerList}
+                <div>
+                    <HotDeal />
+                    <div className="bg-gray-50 h-5 border-t border-b border-gray-200"></div>
+                    <div className="my-3 pt-4 pb-8">
+                        <h1 className="font-bold text-2xl pb-3">
+                            Best Sellers
+                        </h1>
+                        {bestSellerList}
+                    </div>
+                </div>
             </div>
         </>
     );
