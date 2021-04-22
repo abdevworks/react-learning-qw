@@ -7,7 +7,7 @@ import DiscountedProduct from "../../Views/DiscountedProduct";
 export default function HotDeal(){
 
     return (
-        <div className=" mt-3 rounded-xl overflow-hidden border-2 border-pink-500  p-5" >
+        <div className=" mt-3 rounded-xl overflow-hidden border-2 border-pink-500 p-5" >
             <div className="w-full relative">
                 <h1 className="text-2xl font-bold">Hot deal</h1>
 
@@ -16,12 +16,12 @@ export default function HotDeal(){
                     <span className="text-center text-xl px-4">50 %</span>
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2">
+            <div className="flex flex-col md:flex-row lg:flex-col">
+                <div className="md:w-1/2 lg:w-auto">
                     <DiscountedProduct />
                 </div>
-                <div className="w-full md:w-1/2 md:flex md:flex-col md:justify-end">
-                    <div className="mt-3 md:flex md:justify-center md:items-center md:pb-5">
+                <div className="w-full md:w-1/2 md:flex md:flex-col md:justify-end lg:w-full lg:block">
+                    <div className="mt-3 md:flex md:justify-center md:items-center md:pb-5 lg:pb-0 lg:block">
                         <span className="block text-gray-500 text-center text-lg line-through ">260,00 $</span>
                         <span className="block text-center text-pink-500 text-3xl font-bold">130,00 $</span>
                     </div>

@@ -8,7 +8,7 @@ export default function DiscountedProduct(){
 
     return(
         <div className="flex flex-col">
-            <div className="flex justify-center h-64 w-64  mx-auto overflow-hidden pt-4">
+            <div className="flex justify-center h-64 w-auto  mx-auto overflow-hidden pt-4">
                 <img 
                 src={slides[0].url}
                 className="object-co h-full rounded-xl opacity-80"
