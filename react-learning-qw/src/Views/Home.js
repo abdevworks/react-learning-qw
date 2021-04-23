@@ -12,7 +12,7 @@ function Home(){
 
     return(
         <>
-            <div className="p-4 lg:px-10  m-auto max-w-screen-2xl">
+            <div className="p-4 lg:px-10  m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
                 <BannerAd />
                 <div className="lg:flex">
                     <div className="lg:w-3/12">

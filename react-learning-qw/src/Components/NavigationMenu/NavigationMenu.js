@@ -54,11 +54,13 @@ const categories =[
 
 export default function NavigationMenu(props){
     return(
-        <div className="flex shadow-sm h-12 bg-gray-100 px-4 lg:px-10">
-            {categories.map(category =>{
-                return <NavigationMenuCategory key={category.id} category={category} />
-            })}
-
+        <div className="shadow-sm h-12 bg-gray-100">
+            <div className="flex  h-12 px-4 lg:px-10 m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
+                {categories.map(category =>{
+                    return <NavigationMenuCategory key={category.id} category={category} />
+                })}
+            </div>
         </div>
+
     );
 }

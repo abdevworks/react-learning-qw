@@ -57,14 +57,16 @@ export default function BannerAd(){
                 {"<"}
             </div>
 
-            <div className="h-48 md:h-52 lg:h-64 relative">
+            <div className="h-48 md:h-52 lg:h-64 2xl:h-80 w-full relative">
                 {
                 transitions(( props,item, key ) => (
                     <animated.div
                         key={key}
-                        className="h-48 md:h-52 lg:h-64 w-screen bg-cover bg-center absolute"
-                        style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url})`}}
-                    />
+                        className="h-48 md:h-52 lg:h-64 2xl:h-80 w-full absolute"
+                        style={{ ...props}}
+                    >
+                        <img className="block mx-auto w-full" src={`https://images.unsplash.com/${item.url}`} />
+                    </animated.div>
                 ))}
             </div>
 

@@ -7,7 +7,7 @@ import DiscountedProduct from "../../Views/DiscountedProduct";
 export default function HotDeal(){
 
     return (
-        <div className=" mt-3 rounded-xl overflow-hidden border-2 border-pink-500 p-5" >
+        <div className=" mt-3 lg:mt-8 rounded-xl overflow-hidden border-2 border-pink-500 p-5" >
             <div className="w-full relative">
                 <h1 className="text-2xl font-bold">Hot deal</h1>
 
