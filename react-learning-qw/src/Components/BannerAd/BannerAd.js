@@ -49,10 +49,10 @@ export default function BannerAd(){
     }
 
     return(
-        <div className="relative">
-            <div className="flex items-center overflow-hidden rounded-xl shadow-lg ">
+        <div className="relative px-5 pt-3 pb-5 lg:px-10 bg-white">
+            <div className="flex items-center overflow-hidden rounded-xl shadow-lg">
             <div 
-                className="absolute z-10 -left-5  border-1 border-black rounded-full h-10 w-10 lg:h-11 lg:w-11 2xl:h-12 2xl:w-12 flex items-center justify-center font-bold bg-white shadow-md cursor-pointer  select-none" 
+                className="absolute z-10 left-0  border-1 border-black rounded-full h-10 w-10 lg:h-11 lg:w-11 2xl:h-12 2xl:w-12 flex items-center justify-center font-bold bg-white shadow-md cursor-pointer  select-none" 
                 onClick={handleLeftClick}>
                 {"<"}
             </div>
@@ -65,13 +65,13 @@ export default function BannerAd(){
                         className="h-48 md:h-52 lg:h-64 2xl:h-80 w-full absolute"
                         style={{ ...props}}
                     >
-                        <img className="block mx-auto w-full" src={`https://images.unsplash.com/${item.url}`} />
+                        <img className="block mx-auto w-full rounded-xl" src={`https://images.unsplash.com/${item.url}`} />
                     </animated.div>
                 ))}
             </div>
 
             <div 
-                className="absolute z-10 -right-5 border-1 border-black rounded-full h-10 w-10 lg:h-11 lg:w-11 2xl:h-12 2xl:w-12 flex items-center justify-center  font-bold bg-white shadow-md cursor-pointer select-none" 
+                className="absolute z-10 right-0 border-1 border-black rounded-full h-10 w-10 lg:h-11 lg:w-11 2xl:h-12 2xl:w-12 flex items-center justify-center  font-bold bg-white shadow-md cursor-pointer select-none" 
                 onClick={handleRightClick}>
                 {">"}
             </div>

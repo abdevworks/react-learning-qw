@@ -36,13 +36,15 @@ export default function ScrollableList(props) {
   // }
 
   return (
-    <div className="overflow-hidden">
-      <animated.div className="flex" {...bind()} style={{ x }}>
-        {productData.map((product)=>{
-          return <Link to={`/products/${product.id}`} key={product.id} draggable="false"><ProductCard product={product} /></Link>
-        })}
-      </animated.div>
+
+    <div className="overflow-hidden py-4">
+        <animated.div className="flex lg:flex-wrap" {...bind()} style={{ x }}>
+          {productData.map((product)=>{
+            return <Link to={`/products/${product.id}`} key={product.id} draggable="false"><ProductCard product={product} /></Link>
+          })}
+        </animated.div>
     </div>
+
 
   );
 }

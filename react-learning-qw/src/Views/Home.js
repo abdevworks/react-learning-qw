@@ -10,17 +10,19 @@ function Home(){
     let bestSellerList = <ProductList url={url} />;
 
 
+
+
     return(
         <>
-            <div className="p-4 lg:px-10  m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
+            <div className="m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
                 <BannerAd />
-                <div className="lg:flex">
-                    <div className="lg:w-3/12">
+                <div className="lg:flex lg:border-gray-300 lg:border-b lg:pb-8">
+                    <div className="bg-white p-5 mt-3 lg:mt-0 lg:w-4/12 lg:pl-10 lg:pr-0">
                         <HotDeal />
                     </div>
-                    <div className="bg-gray-50 h-5 border-t border-b border-gray-200 lg:hidden"></div>
-                    <div className="my-3 pt-4 pb-8 lg:w-9/12">
-                        <h1 className="font-bold text-2xl pb-3">
+    
+                    <div className="my-3 pt-4 pb-8 bg-white p-5 lg:w-8/12 lg:my-0 lg:pt-5">
+                        <h1 className="font-bold text-2xl lg:border-gray-300 lg:border-t">
                             Best Sellers
                         </h1>
                         {bestSellerList}
