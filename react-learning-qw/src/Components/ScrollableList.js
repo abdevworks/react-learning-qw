@@ -9,9 +9,10 @@ export default function ScrollableList(props) {
   const [{ x }, set] = useSpring(() => ({ x: 0 }))
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const {productData} = props;
+  const numberOfProductsDisplayed = 8;
 
   function calculateDragBounds(){
-    let dragBound = productData.length * 40 * 0.25 * 16 + 6*2*0.25*16- windowWidth;
+    let dragBound = numberOfProductsDisplayed * 44 * 0.25 * 16 + 5*2*0.25*16- windowWidth;
     return dragBound;
   }
 
@@ -37,10 +38,10 @@ export default function ScrollableList(props) {
 
   return (
 
-    <div className="overflow-hidden py-4">
-        <animated.div className="flex lg:flex-wrap" {...bind()} style={{ x }}>
-          {productData.map((product)=>{
-            return <Link to={`/products/${product.id}`} key={product.id} draggable="false"><ProductCard product={product} /></Link>
+    <div className="overflow-hidden pb-4">
+        <animated.div className="grid grid-flow-col grid-cols-small md:grid-cols-md lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-2" {...bind()} style={{ x }}>
+          {productData.slice(0,numberOfProductsDisplayed).map((product)=>{
+            return <div to={`/products/${product.id}`} key={product.id} draggable="false"><ProductCard product={product} /></div>
           })}
         </animated.div>
     </div>

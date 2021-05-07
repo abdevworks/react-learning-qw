@@ -25724,6 +25724,14 @@ video {
   grid-template-columns: none;
 }
 
+.grid-cols-small {
+  grid-template-columns: repeat(4, 30%);
+}
+
+.grid-cols-md {
+  grid-template-columns: repeat(5, 22%);
+}
+
 .auto-cols-auto {
   grid-auto-columns: auto;
 }
@@ -54367,6 +54375,14 @@ video {
     grid-template-columns: none;
   }
 
+  .sm\:grid-cols-small {
+    grid-template-columns: repeat(4, 30%);
+  }
+
+  .sm\:grid-cols-md {
+    grid-template-columns: repeat(5, 22%);
+  }
+
   .sm\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -82939,6 +82955,14 @@ video {
 
   .md\:grid-cols-none {
     grid-template-columns: none;
+  }
+
+  .md\:grid-cols-small {
+    grid-template-columns: repeat(4, 30%);
+  }
+
+  .md\:grid-cols-md {
+    grid-template-columns: repeat(5, 22%);
   }
 
   .md\:auto-cols-auto {
@@ -111515,6 +111539,14 @@ video {
     grid-template-columns: none;
   }
 
+  .lg\:grid-cols-small {
+    grid-template-columns: repeat(4, 30%);
+  }
+
+  .lg\:grid-cols-md {
+    grid-template-columns: repeat(5, 22%);
+  }
+
   .lg\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -140089,6 +140121,14 @@ video {
     grid-template-columns: none;
   }
 
+  .xl\:grid-cols-small {
+    grid-template-columns: repeat(4, 30%);
+  }
+
+  .xl\:grid-cols-md {
+    grid-template-columns: repeat(5, 22%);
+  }
+
   .xl\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -168661,6 +168701,14 @@ video {
 
   .\32xl\:grid-cols-none {
     grid-template-columns: none;
+  }
+
+  .\32xl\:grid-cols-small {
+    grid-template-columns: repeat(4, 30%);
+  }
+
+  .\32xl\:grid-cols-md {
+    grid-template-columns: repeat(5, 22%);
   }
 
   .\32xl\:auto-cols-auto {

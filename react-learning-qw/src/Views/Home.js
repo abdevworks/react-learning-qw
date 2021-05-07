@@ -14,15 +14,15 @@ function Home(){
 
     return(
         <>
-            <div className="m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
+            <div className="m-auto bg-gray-100 lg:max-w-screen-xl 2xl:max-w-screen-2xl">
                 <BannerAd />
-                <div className="lg:flex lg:border-gray-300 lg:border-b lg:pb-8">
-                    <div className="bg-white p-5 mt-3 lg:mt-0 lg:w-4/12 lg:pl-10 lg:pr-0">
+                <div className="lg:grid lg:grid-cols-12 lg:border-gray-300 lg:border-b ">
+                    <div className="bg-white p-5 mt-3 min-w-max lg:col-span-4 lg:mt-0  lg:pl-8 lg:pr-0">
                         <HotDeal />
                     </div>
     
-                    <div className="my-3 pt-4 pb-8 bg-white p-5 lg:w-8/12 lg:my-0 lg:pt-5">
-                        <h1 className="font-bold text-2xl lg:border-gray-300 lg:border-t">
+                    <div className="my-3 pt-4 pb-8 bg-white p-5 lg:col-span-8 lg:my-0 lg:pt-5 lg:pr-8">
+                        <h1 className="font-bold text-2xl lg:pt-3 lg:border-gray-300 lg:border-t">
                             Best Sellers
                         </h1>
                         {bestSellerList}

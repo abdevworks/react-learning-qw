@@ -14,12 +14,12 @@ import Product from "./Views/Product";
 
 function App() {
   return (
-    <div className="relative pb-10 min-h-screen bg-gray-200">
+    <div className="relative pb-10 min-h-screen ">
 
       <Router>
         <Header />
 
-        <div className="pb-3">
+        <div className="bg-gray-100 pb-1">
           <Switch>
             <Route exact path="/">
               <Home />
