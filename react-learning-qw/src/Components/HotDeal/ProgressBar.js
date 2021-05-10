@@ -13,8 +13,8 @@ export default function ProgressBar(props){
     },[width]);
 
     return(
-        <div ref={ref} className="h-3 bg-gray-300 rounded-xl overflow-hidden w-full" >
-            <div className="bg-blue-400 h-3" style={{width: `${progress}px`}}></div>
+        <div ref={ref} className="h-2 bg-gray-300 rounded-xl overflow-hidden w-full" >
+            <div className="bg-blue-400 h-2" style={{width: `${progress}px`}}></div>
         </div>
     );
 }
