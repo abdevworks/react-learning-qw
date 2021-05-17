@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 export default function CountdownTimer(){
 
-    const dealTime = "04/28/2021 16:22:16"
+    const dealTime = "05/28/2021 16:22:16"
     
 
     const calculateTimeLeft = () => {

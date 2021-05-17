@@ -1,7 +1,7 @@
 import React from "react";
-import Loader from "./Loader";
+import Loader from "../ScrollingProductList/Loader";
 import { useAxiosGet } from "../../Hooks/HttpRequests";
-import ScrollableList from "../ScrollableList";
+import HotDeal from "../HotDeal/HotDeal";
 
 
 export default function ProductList(props){
@@ -23,7 +23,7 @@ export default function ProductList(props){
     }
 
     if(products.data){
-        content = <ScrollableList productData={products.data} />
+        content = <HotDeal productData={products.data} />
     }
 
     return(

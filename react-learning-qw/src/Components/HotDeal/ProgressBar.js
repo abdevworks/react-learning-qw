@@ -8,7 +8,7 @@ export default function ProgressBar(props){
     const [progress, setProgress] = useState(0);
     const {width} = useResize(ref);
 
-    useEffect(percent => {
+    useEffect(() => {
         setProgress(width * percent);
     },[width]);
 
