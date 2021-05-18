@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-export default function CountdownTimer(){
+export default function CountdownTimer(props){
 
-    const dealTime = "05/28/2021 16:22:16"
+    const dealTime = props.dealDeadline;
+
     
 
     const calculateTimeLeft = () => {
@@ -52,18 +53,18 @@ export default function CountdownTimer(){
         <div className="flex">
             <div>
                 <div className="bg-gray-300 rounded-xl text-2xl h-14 w-14 flex justify-center items-center">{timerComponents[1]}</div>
-                <span className="block text-center">godz.</span>
+                <span className="block text-center">hours</span>
             </div>
             <div className="flex justify-center px-2 text-2xl pt-2">:</div>
             <div></div>
             <div>
                 <div className="bg-gray-300 rounded-xl text-2xl h-14 w-14 flex justify-center items-center">{timerComponents[2]}</div>
-                <span className="block text-center">min</span>
+                <span className="block text-center">min.</span>
             </div>
             <div className="flex justify-center px-2 text-2xl pt-2">:</div>
             <div>
                 <div className="bg-gray-300 rounded-xl text-2xl h-14 w-14 flex justify-center items-center">{timerComponents[3]}</div>
-                <span className="block text-center">sek.</span>
+                <span className="block text-center">sec.</span>
             </div>
         </div>
     );

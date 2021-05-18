@@ -1,14 +1,12 @@
 import React from "react";
 import Loader from "./Loader";
 import { useAxiosGet } from "../../Hooks/HttpRequests";
-import ScrollableList from "../ScrollableList";
 
 
 export default function ProductList(props){
 
     const url = props.url;
     let products = useAxiosGet(url);
-    console.log({products});
     let content = null;
 
     if(products.error){
@@ -23,7 +21,7 @@ export default function ProductList(props){
     }
 
     if(products.data){
-        content = <ScrollableList productData={products.data} />
+        content = <props.component productData={products.data} />
     }
 
     return(

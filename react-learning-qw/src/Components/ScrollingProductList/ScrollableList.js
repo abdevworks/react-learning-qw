@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import { useSpring, animated } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
-import ProductCard from './ScrollingProductList/ProductCard'
+import ProductCard from './ProductCard'
 import {Link} from "react-router-dom";
 
 

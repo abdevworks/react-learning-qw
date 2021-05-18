@@ -1,9 +1,9 @@
 import React from "react";
 import ProgressBar from "./ProgressBar";
 
-export default function StockUpadeBar(){
+export default function StockUpadeBar(props){
 
-    const {inStock, sold} = {inStock: 23, sold: 23};
+    const {inStock, sold} = props;
     const totalItemCount = inStock + sold;
     const percent = inStock / totalItemCount;
     return(

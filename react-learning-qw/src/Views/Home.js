@@ -1,9 +1,9 @@
 import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
-import ProductList from "../Components/ScrollingProductList/ProductList";
-import HotDealElement from "../Components/HotDeal/HotDealElement";
+import DataProvider from "../Components/ProductDataProvider/DataProvider";
 import Customers from "../Components/customers/customers.js";
+import ScrollableList from "../Components/ScrollingProductList/ScrollableList"; 
 
 
 function Home(){
@@ -12,10 +12,8 @@ function Home(){
     const productUrl = `/api/products`;
     const hotDealUrl = `/api/hot_deal`;
 
-    let bestSellerList = <ProductList url={productUrl} />;
-   // let hotDealElement = <HotDealElement url={hotDealUrl} />;
-
-
+    const bestSellerList = <DataProvider url={productUrl} component={ScrollableList}/>;
+    const hotDealElement = <DataProvider url={hotDealUrl} component={HotDeal}/>;
 
 
     return(
@@ -24,7 +22,7 @@ function Home(){
                 <BannerAd />
                 <div className="pb-4 bg-gray-100 lg:grid lg:grid-cols-12 lg:border-gray-300 lg:border-b ">
                     <div className="mb-4 bg-white p-5 mt-3 min-w-max lg:col-span-4 lg:mt-0 lg:pl-8 lg:pr-0">
-                        <HotDeal />
+                        {hotDealElement}
                     </div>
     
                     <div className="mb-4 pt-4 pb-8 bg-white p-5 lg:col-span-8 lg:my-0 lg:pt-5 lg:pr-8">
