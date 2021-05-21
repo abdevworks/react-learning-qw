@@ -1,5 +1,3 @@
-import React from 'react';
-import NavigationMenuCategory from '../../Views/NavigationMenuCategory';
 import ComputerIcon from "../../Icons/ComputerIcon.svg";
 import smartphone from "../../Icons/smartphone.png";
 import gameController from "../../Icons/gameController.png";
@@ -9,7 +7,7 @@ import tv from "../../Icons/tv.png";
 import home from "../../Icons/home.png";
 import usb from "../../Icons/usb.png";
 
-const categories =[
+export const navigationMenuCategories = [
     {
         id: 1,
         name: 'Laptops and Computers',
@@ -51,16 +49,3 @@ const categories =[
         icon: usb
     }
 ];
-
-export default function NavigationMenu(props){
-    return(
-        <div className="shadow-sm h-12 bg-gray-100">
-            <div className="flex  h-12 px-4 lg:px-10 m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
-                {categories.map(category =>{
-                    return <NavigationMenuCategory key={category.id} category={category} />
-                })}
-            </div>
-        </div>
-
-    );
-}

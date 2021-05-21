@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {useTransition, animated} from 'react-spring';
-import NavigationMenuMobile from "./NavigationMenuMobile";
+import NavigationMenuSideCategories from "./NavigationMenuSideCategories";
 
-export default function NavigationMobile(){
+export default function NavigationMenuSide(){
 
     const [showMenu, setShowMenu] = useState(false);
 
@@ -50,10 +50,10 @@ export default function NavigationMobile(){
                     <animated.div 
                         key={key} 
                         style={props}
-                        className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow p-3"
+                        className="fixed bg-white top-0 left-0 w-6/12 h-full z-50 shadow "
                     >
 
-                        <NavigationMenuMobile 
+                        <NavigationMenuSideCategories 
                             closeMenu={() => setShowMenu(false)} 
                         />
 

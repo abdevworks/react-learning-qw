@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "./NavigationMenu/Navigation";
-import NavigationMobile from "./NavigationMenu/NavigationMobile";
+import NavigationMenuMain from "./NavigationMenuMain/NavigationMenuMain";
+import NavigationMenuSide from "./NavigationMenuSide/NavigationMenuSide";
 import CompanyLogo from "../CompanyLogo.png";
 import {faPhone, faShoppingBasket, faUser} from "@fortawesome/free-solid-svg-icons";
 import HeaderIcon from '../Views/HeaderIcon';
@@ -16,11 +16,11 @@ export default function Header(){
                         <HeaderIcon iconType={faUser} iconText="Account"/>
                         <HeaderIcon iconType={faShoppingBasket} iconText="Basket"/>
                         <HeaderIcon iconType={faPhone} iconText="Contact"/>
-                        <NavigationMobile/>
+                        <NavigationMenuSide />
                     </div>
                 </div>
 
-                <Navigation />
+                <NavigationMenuMain />
             </div>
         </header>
     );
