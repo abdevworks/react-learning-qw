@@ -11,41 +11,41 @@ export const navigationMenuCategories = [
     {
         id: 1,
         name: 'Laptops and Computers',
-        icon: ComputerIcon
+        icon: <img className="w-7 h-6" alt="appLogo" src={ComputerIcon} />
     },
     {
         id: 2,
         name: 'Smartphones & Smartwatches',
-        icon: smartphone
+        icon: <img className="w-7 h-6" alt="appLogo" src={smartphone} />
     },
     {
         id: 3,
         name: 'Gaming & Streaming',
-        icon: gameController
+        icon: <img className="w-7 h-6" alt="appLogo" src={gameController} />
     },
     {
         id: 4,
         name: 'PC Parts',
-        icon: videoCard
+        icon: <img className="w-7 h-6" alt="appLogo" src={videoCard} />
     },
     {
         id: 5,
         name: 'Peripherials',
-        icon: printer
+        icon: <img className="w-7 h-6" alt="appLogo" src={printer} />
     },
     {
         id: 6,
         name: 'TV & Audio',
-        icon: tv
+        icon: <img className="w-7 h-6" alt="appLogo" src={tv} />
     },
     {
         id: 7,
         name: 'Smarthome & Lifestyle',
-        icon: home
+        icon: <img className="w-7 h-6" alt="appLogo" src={home} />
     },
     {
         id: 8,
         name: 'Accessories',
-        icon: usb
+        icon: <img className="w-7 h-6" alt="appLogo" src={usb} />
     }
 ];

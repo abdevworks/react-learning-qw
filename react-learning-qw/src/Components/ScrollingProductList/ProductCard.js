@@ -15,7 +15,7 @@ function ProductCard(props){
             <div className="flex flex-col h-full">
                 <div 
                 //to={`/products/${props.product.id}`}
-                className="h-1/2 overflow-hidden flex items-center"
+                className="h-1/2 overflow-hidden flex items-center justify-center"
                 >
                     <div className="px-1 w-40">
                         <img alt='product item' className="w-full"  src={props.product.images[0].image} draggable="false"  />

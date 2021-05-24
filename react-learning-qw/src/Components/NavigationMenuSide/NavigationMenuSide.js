@@ -23,13 +23,12 @@ export default function NavigationMenuSide(){
 
     return(
         <nav className="pl-4 flex flex-col items-center justify-center h-10 border-l cursor-pointer  lg:hidden">
-            <span className="text-xl">
+            <span className="text-xl" onClick={()=>setShowMenu(!showMenu)}>
                 <FontAwesomeIcon 
                     icon={faBars}
-                    onClick={()=>setShowMenu(!showMenu)}
                 />
             </span>
-            <div className="text-xs">Menu</div>
+            <div className="text-xs" onClick={()=>setShowMenu(!showMenu)}>Menu</div>
             {
                 maskTransitions(( props, item, key  ) =>
                     item && 
@@ -39,7 +38,6 @@ export default function NavigationMenuSide(){
                         className="bg-black-t-50 fixed top-0 left-0 w-full h-full z-50"
                         onClick={() => setShowMenu(false)}
                     >
-
                     </animated.div>
                 )
             }
@@ -52,11 +50,9 @@ export default function NavigationMenuSide(){
                         style={props}
                         className="fixed bg-white top-0 left-0 w-6/12 h-full z-50 shadow "
                     >
-
                         <NavigationMenuSideCategories 
                             closeMenu={() => setShowMenu(false)} 
                         />
-
                     </animated.div>
                 )
             }

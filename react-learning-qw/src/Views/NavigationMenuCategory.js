@@ -12,7 +12,7 @@ export default function NavigationMenuCategory(props){
     return (
         <div className={`px-2 text-sm w-full flex items-center cursor-pointer rounded-xl ${isHovered ? "shadow-md bg-white" : ""}`} onMouseOver={handleHover} onMouseOut={handleHover}>
             <div className="flex items-center justify-center">
-                <img  className="w-7 h-6" alt="appLogo" src={icon} />
+                {icon}
             </div>
             <div className="leading-4 ml-2 h-full w-full flex items-center">{name}</div>
         </div>
