@@ -22,7 +22,12 @@ export default function NavigationMenuSideCategories(props){
     return(
         <nav>
             <div className="px-2 py-2 font-bold text-lg bg-gray-100 flex items-center">
-                <div className={`w-10 h-10 flex items-center justify-center text-xl text-gray-600 ${isHovered ? "bg-gray-300" : ""} select-none cursor-pointer rounded-full`} onClick={props.closeMenu} onMouseOver={handleHover} onMouseOut={handleHover}>
+                <div className={`
+                w-10 h-10 flex items-center justify-center text-xl text-gray-600 
+                ${isHovered ? "bg-gray-300" : ""} select-none cursor-pointer rounded-full`} 
+                onClick={props.closeMenu} 
+                onMouseOver={handleHover} 
+                onMouseOut={handleHover}>
                     <FontAwesomeIcon icon={faTimes}/>
                 </div>
                 <div className="pl-2 font-bold">Menu</div>

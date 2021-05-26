@@ -1,8 +1,6 @@
 import React, { useState} from 'react'
 import { useSpring, animated } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
-import ProductCard from './ProductCard'
-import {Link} from "react-router-dom";
 
 
 export default function ScrollableList(props) {
@@ -31,17 +29,13 @@ export default function ScrollableList(props) {
     filterTaps: true
   });
 
-  // function handleProductSelection(event){
-  //   event.target.value(product.id);
-  //   alert("Product was selected!");
-  // }
 
   return (
 
     <div className="overflow-hidden pb-4">
         <animated.div className="grid grid-flow-col grid-cols-small md:grid-cols-md lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-2" {...bind()} style={{ x }}>
           {productData.slice(0,numberOfProductsDisplayed).map((product)=>{
-            return <div to={`/products/${product.id}`} key={product.id} draggable="false"><ProductCard product={product} /></div>
+            return <div to={`/products/${product.id}`} key={product.id} draggable="false"><props.componentCard product={product} /></div>
           })}
         </animated.div>
     </div>

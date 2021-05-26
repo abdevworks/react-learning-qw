@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-//border mb-4 rounded overflow-hidden"
+
 function ProductCard(props){
 
     const [isHovered, setIsHovered] = useState(false);
@@ -15,14 +15,14 @@ function ProductCard(props){
             <div className="flex flex-col h-full">
                 <div 
                 //to={`/products/${props.product.id}`}
-                className="h-1/2 overflow-hidden flex items-center justify-center"
+                className="h-2/3 overflow-hidden flex items-center justify-center"
                 >
                     <div className="px-1 w-40">
                         <img alt='product item' className="w-full"  src={props.product.images[0].image} draggable="false"  />
                     </div>
                 </div>
 
-                <div className="h-1/2 px-2 w-full flex flex-col justify-between">
+                <div className="h-1/3 px-2 w-full flex flex-col justify-between">
 
                     <span className="text-sm">
                         <Link to={`/products/${props.product.id}`} draggable="false" >
@@ -31,7 +31,7 @@ function ProductCard(props){
                     </span>
 
                     <div className=" text-sm" draggable="false">
-                        $ {props.product.price}
+                        {props.product.price}
                     </div>
                 </div>
             </div>

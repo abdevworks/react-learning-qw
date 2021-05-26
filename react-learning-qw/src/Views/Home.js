@@ -2,8 +2,12 @@ import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
 import DataProvider from "../Components/ProductDataProvider/DataProvider";
+import ScrollableList from "../Components/ScrollableShopSection/ScrollableList"; 
 import Customers from "../Components/customers/customers.js";
-import ScrollableList from "../Components/ScrollingProductList/ScrollableList"; 
+import ShopSection from "../Components/ScrollableShopSection/ShopSection";
+import ProductCard from '../Components/ScrollableShopSection/ProductCard';
+import CategoryCard from '../Components/ScrollableShopSection/CategoryCard';
+
 
 
 function Home(){
@@ -13,6 +17,7 @@ function Home(){
     const hotDealUrl = `/api/hot_deal`;
 
     const bestSellerList = <DataProvider url={productUrl} component={ScrollableList}/>;
+    const recommendedList = <DataProvider url={productUrl} component={ScrollableList}/>;
     const hotDealElement = <DataProvider url={hotDealUrl} component={HotDeal}/>;
 
 
@@ -25,12 +30,9 @@ function Home(){
                         {hotDealElement}
                     </div>
     
-                    <div className="mb-4 pt-4 pb-8 bg-white p-5 lg:col-span-8 lg:my-0 lg:pt-5 lg:pr-8">
-                        <h1 className="font-bold text-2xl lg:pt-3 lg:border-gray-300 lg:border-t">
-                            Best Sellers
-                        </h1>
-                        {bestSellerList}
-                    </div>
+                    <ShopSection sectionName="Best Sellers" apiURL={productUrl}  componentCard={ProductCard} sectionLink={false}/>
+                    <ShopSection sectionName="Recommended" apiURL={productUrl} componentCard={ProductCard}/>
+                    <ShopSection sectionName="Guides" apiURL={productUrl} componentCard={CategoryCard}/>
 
                     <Customers />
 
