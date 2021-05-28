@@ -32,9 +32,7 @@ function Home(){
     
                     <ShopSection sectionName="Best Sellers" apiURL={productUrl}  componentCard={ProductCard} sectionLink={false}/>
                     <ShopSection sectionName="Recommended" apiURL={productUrl} componentCard={ProductCard}/>
-                    <ShopSection sectionName="Guides" apiURL={productUrl} componentCard={CategoryCard}/>
-
-                    <Customers />
+                    <ShopSection sectionName="Guides" apiURL={productUrl} componentCard={CategoryCard} componentCardSize={"medium"}/>
 
                 </div>
             </div>

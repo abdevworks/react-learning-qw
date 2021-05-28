@@ -21,7 +21,7 @@ export default function ProductList(props){
     }
 
     if(products.data){
-        content = <props.component componentCard={props.componentCard} productData={products.data} />
+        content = <props.component componentCard={props.componentCard} productData={products.data} componentCardSize={props.componentCardSize} />
     }
 
     return(

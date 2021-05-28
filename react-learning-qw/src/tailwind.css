@@ -25724,12 +25724,20 @@ video {
   grid-template-columns: none;
 }
 
-.grid-cols-small {
+.grid-cols-two {
+  grid-template-columns: repeat(3, 40%);
+}
+
+.grid-cols-three {
   grid-template-columns: repeat(4, 30%);
 }
 
-.grid-cols-md {
+.grid-cols-four {
   grid-template-columns: repeat(5, 22%);
+}
+
+.grid-cols-five {
+  grid-template-columns: repeat(6, 18%);
 }
 
 .auto-cols-auto {
@@ -54375,12 +54383,20 @@ video {
     grid-template-columns: none;
   }
 
-  .sm\:grid-cols-small {
+  .sm\:grid-cols-two {
+    grid-template-columns: repeat(3, 40%);
+  }
+
+  .sm\:grid-cols-three {
     grid-template-columns: repeat(4, 30%);
   }
 
-  .sm\:grid-cols-md {
+  .sm\:grid-cols-four {
     grid-template-columns: repeat(5, 22%);
+  }
+
+  .sm\:grid-cols-five {
+    grid-template-columns: repeat(6, 18%);
   }
 
   .sm\:auto-cols-auto {
@@ -82957,12 +82973,20 @@ video {
     grid-template-columns: none;
   }
 
-  .md\:grid-cols-small {
+  .md\:grid-cols-two {
+    grid-template-columns: repeat(3, 40%);
+  }
+
+  .md\:grid-cols-three {
     grid-template-columns: repeat(4, 30%);
   }
 
-  .md\:grid-cols-md {
+  .md\:grid-cols-four {
     grid-template-columns: repeat(5, 22%);
+  }
+
+  .md\:grid-cols-five {
+    grid-template-columns: repeat(6, 18%);
   }
 
   .md\:auto-cols-auto {
@@ -111539,12 +111563,20 @@ video {
     grid-template-columns: none;
   }
 
-  .lg\:grid-cols-small {
+  .lg\:grid-cols-two {
+    grid-template-columns: repeat(3, 40%);
+  }
+
+  .lg\:grid-cols-three {
     grid-template-columns: repeat(4, 30%);
   }
 
-  .lg\:grid-cols-md {
+  .lg\:grid-cols-four {
     grid-template-columns: repeat(5, 22%);
+  }
+
+  .lg\:grid-cols-five {
+    grid-template-columns: repeat(6, 18%);
   }
 
   .lg\:auto-cols-auto {
@@ -140121,12 +140153,20 @@ video {
     grid-template-columns: none;
   }
 
-  .xl\:grid-cols-small {
+  .xl\:grid-cols-two {
+    grid-template-columns: repeat(3, 40%);
+  }
+
+  .xl\:grid-cols-three {
     grid-template-columns: repeat(4, 30%);
   }
 
-  .xl\:grid-cols-md {
+  .xl\:grid-cols-four {
     grid-template-columns: repeat(5, 22%);
+  }
+
+  .xl\:grid-cols-five {
+    grid-template-columns: repeat(6, 18%);
   }
 
   .xl\:auto-cols-auto {
@@ -168703,12 +168743,20 @@ video {
     grid-template-columns: none;
   }
 
-  .\32xl\:grid-cols-small {
+  .\32xl\:grid-cols-two {
+    grid-template-columns: repeat(3, 40%);
+  }
+
+  .\32xl\:grid-cols-three {
     grid-template-columns: repeat(4, 30%);
   }
 
-  .\32xl\:grid-cols-md {
+  .\32xl\:grid-cols-four {
     grid-template-columns: repeat(5, 22%);
+  }
+
+  .\32xl\:grid-cols-five {
+    grid-template-columns: repeat(6, 18%);
   }
 
   .\32xl\:auto-cols-auto {

@@ -29,11 +29,32 @@ export default function ScrollableList(props) {
     filterTaps: true
   });
 
+  let gridCardNumber = {};
+
+ switch(props.componentCardSize) {
+   case 'small':
+    gridCardNumber = {
+      small: "three",
+      medium: "four"
+    }
+    break;
+   case 'medium':
+    gridCardNumber = {
+      small: "two",
+      medium: "three"
+    }
+    break;
+   default:
+    gridCardNumber = {
+      small: "three",
+      medium: "four"
+    }
+ }
 
   return (
 
     <div className="overflow-hidden pb-4">
-        <animated.div className="grid grid-flow-col grid-cols-small md:grid-cols-md lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-2" {...bind()} style={{ x }}>
+        <animated.div className={`grid grid-flow-col grid-cols-${gridCardNumber.small} md:grid-cols-${gridCardNumber.medium} lg:grid-flow-row lg:grid-cols-4 lg:grid-rows-2`} {...bind()} style={{ x }}>
           {productData.slice(0,numberOfProductsDisplayed).map((product)=>{
             return <div to={`/products/${product.id}`} key={product.id} draggable="false"><props.componentCard product={product} /></div>
           })}

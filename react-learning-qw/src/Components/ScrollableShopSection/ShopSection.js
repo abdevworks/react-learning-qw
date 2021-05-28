@@ -12,8 +12,8 @@ export default function ShopSection(props){
         setIsHovered(!isHovered);
     }
 
-    const {sectionName, apiURL, sectionLink = true} = props;
-    const itemList = <DataProvider url={apiURL} component={ScrollableList} componentCard={props.componentCard}/>;
+    const {sectionName, apiURL, componentCardSize = "small", sectionLink = true} = props;
+    const itemList = <DataProvider url={apiURL} component={ScrollableList} componentCard={props.componentCard} componentCardSize={componentCardSize}/>;
 
     return(
         <div className="mb-4 pt-4 pb-8 bg-white p-5 lg:col-span-8 lg:my-0 lg:pt-5 lg:pr-8">
