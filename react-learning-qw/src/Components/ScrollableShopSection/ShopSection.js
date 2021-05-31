@@ -12,13 +12,13 @@ export default function ShopSection(props){
         setIsHovered(!isHovered);
     }
 
-    const {sectionName, apiURL, componentCardSize = "small", sectionLink = true} = props;
-    const itemList = <DataProvider url={apiURL} component={ScrollableList} componentCard={props.componentCard} componentCardSize={componentCardSize}/>;
+    const {sectionName, apiURL, componentCardSize = "small", sectionLink = true, displayAsRows} = props;
+    const itemList = <DataProvider url={apiURL} component={ScrollableList} componentCard={props.componentCard} componentCardSize={componentCardSize} displayAsRows={displayAsRows}/>;
 
     return(
-        <div className="mb-4 pt-4 pb-8 bg-white p-5 lg:col-span-8 lg:my-0 lg:pt-5 lg:pr-8">
-            <div className="flex items-center justify-between ">
-                <h1 className="font-bold text-2xl pb-2 lg:pt-3 lg:border-gray-300 lg:border-t">
+        <div className="mb-4 pt-4 pb-8 bg-white px-5 lg:pt-5 lg:pb-0 lg:mb-0">
+            <div className="flex items-center justify-between lg:pt-3 lg:border-gray-300 lg:border-t">
+                <h1 className=" font-bold text-2xl pb-2 ">
                     {sectionName}
                 </h1>
                 <div className={`

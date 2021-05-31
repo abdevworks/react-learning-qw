@@ -15,9 +15,8 @@ function Home(){
     //const url = `https://602a44aa6c995100176ee169.mockapi.io/products?page=1&limit=10`;
     const productUrl = `/api/products`;
     const hotDealUrl = `/api/hot_deal`;
+    const promotionsUrl = `/api/promotions`;
 
-    const bestSellerList = <DataProvider url={productUrl} component={ScrollableList}/>;
-    const recommendedList = <DataProvider url={productUrl} component={ScrollableList}/>;
     const hotDealElement = <DataProvider url={hotDealUrl} component={HotDeal}/>;
 
 
@@ -25,16 +24,19 @@ function Home(){
         <div className="bg-white">
             <div className="m-auto lg:max-w-screen-xl 2xl:max-w-screen-2xl">
                 <BannerAd />
-                <div className="pb-4 bg-gray-100 lg:grid lg:grid-cols-12 lg:border-gray-300 lg:border-b ">
-                    <div className="mb-4 bg-white p-5 mt-3 min-w-max lg:col-span-4 lg:mt-0 lg:pl-8 lg:pr-0">
-                        {hotDealElement}
+                <div className="pb-1 bg-gray-100  lg:border-gray-300 lg:pb-0">
+                    <div className="lg:grid lg:grid-cols-12">
+                        <div className="mb-4 bg-white p-5 mt-3  lg:col-span-4 lg:mt-0 lg:pl-8 lg:pr-0 lg:mb-0">
+                            {hotDealElement}
+                        </div>
+                        <div className="lg:col-span-8 lg:pr-8 lg:bg-white">
+                            <ShopSection sectionName="Best Sellers" apiURL={productUrl}  componentCard={ProductCard} sectionLink={false} displayAsRows={true}/>
+                        </div>
                     </div>
-    
-                    <ShopSection sectionName="Best Sellers" apiURL={productUrl}  componentCard={ProductCard} sectionLink={false}/>
                     <ShopSection sectionName="Recommended" apiURL={productUrl} componentCard={ProductCard}/>
-                    <ShopSection sectionName="Guides" apiURL={productUrl} componentCard={CategoryCard} componentCardSize={"medium"}/>
-
+                    <ShopSection sectionName="Promotions" apiURL={promotionsUrl} componentCard={CategoryCard} componentCardSize={"medium"}/>
                 </div>
+               
             </div>
         </div>
     );

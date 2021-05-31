@@ -8,6 +8,7 @@ export default function ProductList(props){
     const url = props.url;
     let products = useAxiosGet(url);
     let content = null;
+    const {componentCardSize, displayAsRows} = props;
 
     if(products.error){
         content = 
@@ -21,7 +22,7 @@ export default function ProductList(props){
     }
 
     if(products.data){
-        content = <props.component componentCard={props.componentCard} productData={products.data} componentCardSize={props.componentCardSize} />
+        content = <props.component componentCard={props.componentCard} productData={products.data} componentCardSize={componentCardSize} displayAsRows={displayAsRows}/>
     }
 
     return(
