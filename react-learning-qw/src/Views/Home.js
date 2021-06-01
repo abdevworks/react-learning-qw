@@ -2,8 +2,6 @@ import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
 import DataProvider from "../Components/ProductDataProvider/DataProvider";
-import ScrollableList from "../Components/ScrollableShopSection/ScrollableList"; 
-import Customers from "../Components/customers/customers.js";
 import ShopSection from "../Components/ScrollableShopSection/ShopSection";
 import ProductCard from '../Components/ScrollableShopSection/ProductCard';
 import CategoryCard from '../Components/ScrollableShopSection/CategoryCard';
@@ -26,10 +24,10 @@ function Home(){
                 <BannerAd />
                 <div className="pb-1 bg-gray-100  lg:border-gray-300 lg:pb-0">
                     <div className="lg:grid lg:grid-cols-12">
-                        <div className="mb-4 bg-white p-5 mt-3  lg:col-span-4 lg:mt-0 lg:pl-8 lg:pr-0 lg:mb-0">
+                        <div className="mb-4 bg-white p-5 mt-3 lg:col-span-4 lg:mt-0 lg:pl-8 lg:pr-8 lg:mb-0">
                             {hotDealElement}
                         </div>
-                        <div className="lg:col-span-8 lg:pr-8 lg:bg-white">
+                        <div className="lg:col-span-8 lg:pr-8 lg:bg-white lg:pt-5">
                             <ShopSection sectionName="Best Sellers" apiURL={productUrl}  componentCard={ProductCard} sectionLink={false} displayAsRows={true}/>
                         </div>
                     </div>

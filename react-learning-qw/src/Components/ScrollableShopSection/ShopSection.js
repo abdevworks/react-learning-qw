@@ -16,9 +16,9 @@ export default function ShopSection(props){
     const itemList = <DataProvider url={apiURL} component={ScrollableList} componentCard={props.componentCard} componentCardSize={componentCardSize} displayAsRows={displayAsRows}/>;
 
     return(
-        <div className="mb-4 pt-4 pb-8 bg-white px-5 lg:pt-5 lg:pb-0 lg:mb-0">
-            <div className="flex items-center justify-between lg:pt-3 lg:border-gray-300 lg:border-t">
-                <h1 className=" font-bold text-2xl pb-2 ">
+        <div className="mb-4 pt-4 pb-8 bg-white px-5 lg:pt-0 lg:pb-0 lg:mb-0">
+            <div className=" flex items-center justify-between lg:pt-3 lg:border-gray-300 lg:border-t">
+                <h1 className=" font-semibold text-2xl pb-2 ">
                     {sectionName}
                 </h1>
                 <div className={`

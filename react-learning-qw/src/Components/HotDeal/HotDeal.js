@@ -13,7 +13,7 @@ export default function HotDeal(props){
     return (
         <div className="rounded-xl overflow-hidden border-2 border-pink-500 p-5 lg:px-3 " >
             <div className="w-full relative">
-                <h1 className="text-2xl font-bold">Hot deal</h1>
+                <h1 className="text-2xl font-semibold">Hot deal</h1>
 
                 <div className="absolute top-0 right-0 z-10 bg-gray-500 text-white rounded-xl py-1 px-3 ">
                     <div className="text-center">Save</div>
