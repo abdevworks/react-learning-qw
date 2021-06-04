@@ -14,7 +14,7 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd react-learning-qw && npm start",
-    "client-dep": "cd react-learning-qw && npm run build:css && react-scripts build",
+    "client-dep": "npm react-learning-qw/build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "dep": "concurrently \"npm run server\" \"npm run client-dep\""
   },
