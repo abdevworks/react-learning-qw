@@ -8,18 +8,18 @@ export default function ScrollableList(props) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const {productData, displayAsRows=false} = props;
   const scrollableListRef = useRef(null);
-  let scrollableListWidth = 0;
-
+  
   useEffect ( () => {
+    let scrollableListWidth = 0;
     if(scrollableListRef.current){
         scrollableListWidth  = scrollableListRef.current.offsetWidth; 
           setWindowWidth(scrollableListWidth);
-          console.log({windowWidth});
     }
 }, [scrollableListRef]);
 
   function calculateDragBounds(){
-    let dragBound = windowWidth * 0.3 * 4 + windowWidth * 0.2;
+    //let dragBound = windowWidth * 0.3 * 4 + windowWidth * 0.2;
+    let dragBound = 400;
     return dragBound;
   }
 

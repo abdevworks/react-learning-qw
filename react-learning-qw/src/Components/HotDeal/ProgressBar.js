@@ -10,7 +10,7 @@ export default function ProgressBar(props){
 
     useEffect(() => {
         setProgress(width * percent);
-    },[width]);
+    },[width, percent]);
 
     return(
         <div ref={ref} className="h-2 bg-gray-300 rounded-xl overflow-hidden w-full" >
