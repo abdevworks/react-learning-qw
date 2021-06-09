@@ -6,7 +6,7 @@ import { useAxiosGet } from "../../Hooks/HttpRequests";
 export default function ProductList(props){
 
     const url = props.url;
-    let products = useAxiosGet(url);
+    let products = useAxiosGet("/.netlify/functions/server" + url);
     let content = null;
     const {componentCardSize, displayAsRows} = props;
 

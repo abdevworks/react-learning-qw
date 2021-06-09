@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useTransition, animated} from 'react-spring'
+import { useAxiosGet } from "../../Hooks/HttpRequests";
 
 
 const slides = [
@@ -20,6 +21,7 @@ export default function BannerAd(){
         enter: { opacity: 1, transform: `translateX(0%)` },
         leave: { opacity: 0, transform: `translateX(${-100 * direction}%)` },
     });
+
 
     useEffect(() =>{
         const intervalId = setInterval(() => {

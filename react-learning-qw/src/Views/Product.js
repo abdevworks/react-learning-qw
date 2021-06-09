@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams} from "react-router-dom";
-import Loader from "../Components/ProductDataProvider/Loader";
+import Loader from "../Components/DataProvider/Loader";
 import {useAxiosGet} from "../Hooks/HttpRequests";
 
 function Product(){

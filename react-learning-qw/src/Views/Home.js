@@ -1,7 +1,7 @@
 import React from "react";
 import BannerAd from "../Components/BannerAd/BannerAd";
 import HotDeal from "../Components/HotDeal/HotDeal";
-import DataProvider from "../Components/ProductDataProvider/DataProvider";
+import ProductDataProvider from "../Components/DataProvider/ProductDataProvider";
 import ShopSection from "../Components/ScrollableShopSection/ShopSection";
 import ProductCard from '../Components/ScrollableShopSection/ProductCard';
 import CategoryCard from '../Components/ScrollableShopSection/CategoryCard';
@@ -15,7 +15,7 @@ function Home(){
     const hotDealUrl = `/api/hot_deal`;
     const promotionsUrl = `/api/promotions`;
 
-    const hotDealElement = <DataProvider url={hotDealUrl} component={HotDeal}/>;
+    const hotDealElement = <ProductDataProvider url={hotDealUrl} component={HotDeal}/>;
 
 
     return(

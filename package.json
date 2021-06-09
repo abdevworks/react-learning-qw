@@ -4,19 +4,22 @@
   "description": "React and Express",
   "main": "server.js",
   "dependencies": {
-    "concurrently": "^6.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "netlify-lambda": "^2.0.8",
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "cd react-learning-qw && npm start",
-    "client-dep": "cd react-learning-qw && npm build",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "dep": "concurrently \"npm run server\" \"npm run client-dep\""
+    "start": "run-p start:**",
+    "start:lambda": "netlify-lambda serve api",
+    "start:app": "cd react-learning-qw && npm start",
+    "build": "run-p build:**",
+    "build:lambda": "netlify-lambda build api",
+    "build:app": "cd react-learning-qw && npm build",
+    "deploy:draft": "netlify deploy --dir=react-learning-qw/build --functions=functions",
+    "deploy:prod": "netlify deploy --dir=react-learning-qw/build --functions=functions --prod"
   },
   "repository": {
     "type": "git",

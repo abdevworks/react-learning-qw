@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
+const serverless = require('serverless-http');
+const router = express.Router();
 
-app.get('/api/customers', (req, res) => {
+app.use(express.json());
+app.use(express.urlencoded());// API calls
+
+router.get('/api/customers', (req, res) => {
     const customers = [
         {id: 1, firstName: 'John', lastName: 'Doe'},
         {id: 2, firstName: 'Steve', lastName: 'Smith'},
@@ -11,7 +16,7 @@ app.get('/api/customers', (req, res) => {
     res.json(customers);
 });
 
-app.get('/api/products', (req, res) => {
+router.get('/api/products', (req, res) => {
     const products = [
         {id: 1, name: 'Xiaomi Redmi 9 3/32GB Carbon Grey NFC', price: '150,00 $', description: 'Xiaomi Redmi 9 3/32GB Carbon Grey NFC', images: [{image: "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2020/6/pr_2020_6_25_15_18_4_537_00.jpg"}]},
         {id: 2, name: 'Motorola Moto G30 6/128GB Dark Pearl 90Hz', price: '220,00 $', description: 'Motorola Moto G30 6/128GB Dark Pearl 90Hz', images: [{image:'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2021/2/pr_2021_2_20_8_32_27_472_00.jpg'}]},
@@ -26,7 +31,7 @@ app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
-app.get('/api/hot_deal', (req, res) => {
+router.get('/api/hot_deal', (req, res) => {
     const products = [
         {
             id: 1, 
@@ -43,7 +48,7 @@ app.get('/api/hot_deal', (req, res) => {
     res.json(products);
 });
 
-app.get('/api/promotions', (req, res) => {
+router.get('/api/promotions', (req, res) => {
     const products = [
         {id: 1, name: 'Learn about XYZ and win microfphone ABC for free!', price: 'You like to record a lot? This may be just for you!', description: 'Learn about XYZ and win microfphone ABC for free!', images: [{image: "https://cdn.x-kom.pl/i/setup/images/news/news-small,,7644-news-mini-260x225--11-.jpg"}]},
         {id: 2, name: 'Motorola Moto G30 6/128GB Dark Pearl 90Hz', price: '220,00 $', description: 'Motorola Moto G30 6/128GB Dark Pearl 90Hz', images: [{image:'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2021/2/pr_2021_2_20_8_32_27_472_00.jpg'}]},
@@ -58,8 +63,18 @@ app.get('/api/promotions', (req, res) => {
     res.json(products);
 });
 
+router.get('/api/banners', (req, res) => {
+    const banners = [
+        { id: 0, url: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80' },
+        { id: 1, url: 'https://images.unsplash.com/photo-1605719124118-58056ae4ed2a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' },
+        { id: 2, url: 'https://images.unsplash.com/photo-1572314493295-09c6d5ec3cdf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80' },
+        { id: 3, url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1303&q=80' },
+    ];
+
+    res.json(banners);
+});
 
 
-const port = 5000;
-
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.use('/.netlify/functions/server', router);
+module.exports = app;
+module.exports.handler = serverless(app);

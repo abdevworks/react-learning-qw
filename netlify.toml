@@ -1,0 +1,7 @@
+[build]
+  Functions = "functions"
+  Publish = "react-learning-qw/build"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
