@@ -1,7 +1,4 @@
-
-
 const express = require('express');
-
 const app = express();
 
 app.get('/api/customers', (req, res) => {
@@ -40,7 +37,7 @@ app.get('/api/hot_deal', (req, res) => {
             sold: 60,
             description: 'Green Cell Induction Charger AirJuice 15W', 
             images: [{image: "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2020/2/pr_2020_2_17_8_30_48_849_00.jpg"}],
-            dealDeadline: '05/28/2021 16:22:16' }
+            dealDeadline: '06/28/2021 16:22:16' }
     ];
 
     res.json(products);
