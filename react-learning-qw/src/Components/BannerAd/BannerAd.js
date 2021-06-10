@@ -1,28 +1,26 @@
 import React, {useState, useEffect} from "react";
 import {useTransition, animated} from 'react-spring'
-import { useAxiosGet } from "../../Hooks/HttpRequests";
-
-
-const slides = [
-    { id: 0, url: 'photo-1556742111-a301076d9d18?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80' },
-    { id: 1, url: 'photo-1605719124118-58056ae4ed2a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' },
-    { id: 2, url: 'photo-1572314493295-09c6d5ec3cdf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80' },
-    { id: 3, url: 'photo-1544244015-0df4b3ffc6b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1303&q=80' },
-];
-
-
 
 export default function BannerAd(){
 
     const [index, set] = useState(0); //slide index
     const  [direction, setDirection] = useState(1); //animation direction
+    const [slides, setSlides] = useState([]);
+    
     const transitions = useTransition(slides[index],  {
         from: {opacity: 0, transform: `translateX(${100 * direction}%)` },
         enter: { opacity: 1, transform: `translateX(0%)` },
         leave: { opacity: 0, transform: `translateX(${-100 * direction}%)` },
     });
 
-
+    useEffect(() => {
+        fetch("/.netlify/functions/server/api/banners").then(
+            response => response.json()
+        ).then(data => {
+            setSlides(data);
+        })
+    }, []);
+    
     useEffect(() =>{
         const intervalId = setInterval(() => {
             setDirection(1);
@@ -32,8 +30,7 @@ export default function BannerAd(){
             //cleanup function
             clearInterval(intervalId);
         }
-    },[]);
-
+    },[slides]);
 
     function handleRightClick(){
         setDirection(1);
@@ -67,7 +64,7 @@ export default function BannerAd(){
                         className="h-48 md:h-52 lg:h-64 2xl:h-80 w-full absolute"
                         style={{ ...props}}
                     >
-                        <img className="block mx-auto w-full rounded-xl" alt="discounted product" src={`https://images.unsplash.com/${item.url}`} />
+                    <img className="block mx-auto w-full rounded-xl" alt="discounted product" src={`https://images.unsplash.com/${item.url}`} />
                     </animated.div>
                 ))}
             </div>

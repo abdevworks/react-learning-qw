@@ -26,8 +26,8 @@ export default function ScrollableList(props) {
   window.addEventListener("resize", function() {
     if(scrollableListRef.current){
       setWindowWidth(scrollableListRef.current.offsetWidth);
-      console.log({windowWidth});
-      console.log("hello")
+      // console.log({windowWidth});
+      // console.log("hello")
     }
   });
 
