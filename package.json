@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
+    "netlify-cli": "^3.37.14",
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
